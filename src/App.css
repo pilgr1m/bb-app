@@ -6,9 +6,12 @@
 
 body {
   background: rgb(4, 34, 5);
-  background: border-box
+  background: no-repeat
     linear-gradient(180deg, rgb(4, 51, 26) 0%, rgba(0, 0, 0, 1) 75%);
-  /* height: 100vh; */
+  height: 100%;
+  height: auto;
+  background-attachment: fixed;
+  background-size: cover;
   color: #fff;
   font-family: "Poppins", sans-serif;
 }
@@ -23,7 +26,7 @@ a {
   padding: 0 20px;
 }
 
-.btn {
+/* .btn {
   display: inline-block;
   color: #fff;
   background-color: #3fb573;
@@ -32,7 +35,7 @@ a {
   padding: 10px 15px;
   border: 0;
   margin: 10px 0;
-}
+} */
 
 header {
   height: 200px;
@@ -53,12 +56,13 @@ header img {
 
 input[type="text"] {
   display: block;
-  padding: 10px;
+  padding: 10px 10px 10px 20px;
   font-size: 20px;
-  border: 0;
-  border-radius: 5px;
+  border: none;
+  outline: none;
+  border-radius: 100px;
   width: 60%;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .cards {
@@ -123,4 +127,43 @@ input[type="text"] {
 }
 .card .strong {
   font-weight: 700;
+}
+
+.loader {
+  border: 16px solid #c7c5c5; /* Light grey */
+  border-top: 16px solid rgb(47, 117, 50);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 2s linear infinite;
+  margin: auto;
+  display: block;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* --media-- */
+
+@media (max-width: 800px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .card img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+  }
 }
